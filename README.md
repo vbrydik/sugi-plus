@@ -1,6 +1,4 @@
-# sugi
-
-A fantasy console inspired by pico8.
+# sugi-plus
 
 ## Build from source
 
