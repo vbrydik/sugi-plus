@@ -8,15 +8,15 @@ namespace sugi
     class Engine
     {
         private:
-            sugi::Window m_window;
-            // sugi::EventProcessor m_event_proc;
-            SDL_Event m_event;
             bool m_quit;
+            SDL_Event m_event;
+            sugi::Window m_window;
         public:
             Engine();
             ~Engine();
             void init();
             void run();
+            void poll(SDL_Event *e);
     };
 };
 

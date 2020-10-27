@@ -3,46 +3,31 @@
 sugi::Engine::Engine() {}
 sugi::Engine::~Engine() {}
 
-
-void (SDL_Event *e)
-{
-    switch (e->type)
-    {
-        case SDL_QUIT:
-
-            break;
-    }
-}
-
-
 void sugi::Engine::init()
 {
-    m_quit = false;
-
-    m_window = sugi::Window();
-    m_window.init();
-
-    m_event_processor.set_poll_event_fn(my_poll_fn, this);
+    this->m_quit = false;
+    this->m_window = sugi::Window();
+    this->m_window.init();
 }
 
 void sugi::Engine::run()
 {
     while (!this->m_quit)
     {
-        // TODO: Move this while loop in the separate event processor
-        /*
-        while (SDL_PollEvent(&this->m_event))
-        {
-            switch (this->m_event.type)
-            {
-                case SDL_QUIT:
-                    this->m_quit = true;
-                    break;
-                default:
-                    break;
-            }
-        }
-        */
-        m_event_processor.poll();
+        this->poll(&this->m_event);
+        // this->update_input();
+        // this->update_game();
+        // this->update_windows();
+    }
+}
+
+void sugi::Engine::poll(SDL_Event *e)
+{
+    SDL_PollEvent(&this->m_event);
+    switch (this->m_event.type)
+    {
+        case SDL_QUIT:
+            this->m_quit = true;
+            break;
     }
 }
