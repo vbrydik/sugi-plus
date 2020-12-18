@@ -1,6 +1,4 @@
-#ifndef __SUGI_ENGINE_H_
-#define __SUGI_ENGINE_H_
-
+#pragma once
 #include "sugi_window.hpp"
 
 namespace sugi
@@ -19,5 +17,3 @@ namespace sugi
             void poll(SDL_Event *e);
     };
 };
-
-#endif // __SUGI_ENGINE_H_

@@ -1,6 +1,4 @@
-#ifndef __SUGI_CONFIG_H_
-#define __SUGI_CONFIG_H_
-
+#pragma once
 #include <map>
 #include <string>
 #include <fstream>
@@ -77,9 +75,3 @@ std::map<std::string, std::string> read_config(std::string filename)
 
     return config_map;
 }
-
-
-
-
-
-#endif // __SUGI_CONFIG_H_

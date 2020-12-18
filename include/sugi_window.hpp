@@ -1,9 +1,7 @@
-#ifndef __SUGI_WINDOW_H_
-#define __SUGI_WINDOW_H_
-
+#pragma once
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
-//#include <SDL2/SDL_opengl.h>
+#include <string>
 
 namespace sugi{
 
@@ -15,7 +13,7 @@ namespace sugi{
             SDL_Window *m_window;
             SDL_GLContext m_context;
         public:
-            void init();
+            void init(int, int, std::string);
             SDL_Window * get_window();
             SDL_GLContext * get_context();
             Window();
@@ -23,5 +21,3 @@ namespace sugi{
     };
 
 };
-
-#endif // __SUGI_WINDOW_H_
